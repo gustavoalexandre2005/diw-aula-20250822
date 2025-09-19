@@ -42,9 +42,41 @@
     }
 
     #titulo {
+        /* border: .1rem solid white; */
         font-size: 1.2rem;
         font-weight: bold;
         color: #eee;
+        flex: 1;
+    }
+
+    .menu-hamburguer {
+        /* border: .1rem solid red; */
+        border-radius: 100%;
+        padding: .7rem;
+        width: 1.2rem;
+        height: 1.2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        background-color: #4a4a4a;
+    }
+
+    .menu-hamburguer:hover {
+        background-color: #5e5e5e;
+    }
+
+    .menu-hamburguer:hover i {
+        color: #eee;
+    }
+
+    .menu-hamburguer i:hover {
+        color: white;
+    }
+
+    .menu-hamburguer i {
+        font-size: 1.5rem;
+        color: #ccc;
     }
 
     section {
@@ -64,6 +96,10 @@
         padding: .6rem;
     }
 
+    li {
+        margin-bottom: 1rem;
+    }
+
     .opcao {
         display: flex;
         /* border: .1rem solid green; */
@@ -76,13 +112,19 @@
     .opcao:hover {
         background-color: #ccc;
         color: black;
-        box-shadow: 0rem .3rem .3rem .01rem #ddd;
+        box-shadow: .3rem .3rem .3rem .01rem #ddd;
+        border: .1rem solid #bdbdbd;
+    }
+
+    .opcao:hover .rotulo {
+        /* transform: translateX(90%); */
+        text-align: right;
     }
 
     .opcao:hover .icone-final {
         opacity: 1;
     }
-    
+
     .icone-inicial {
         /* border: .1rem solid red; */
         width: 1.5rem;
@@ -95,10 +137,10 @@
 
     .icone-final {
         /* border: .1rem solid #d000ff; */
-        width: 1.5rem;
+        width: 1rem;
         text-align: right;
         opacity: 0;
-        transition: opacity .3seg ease;
+        transition: opacity .3s ease-in;
     }
 
     main {
@@ -106,6 +148,7 @@
         flex: 1;
         padding: 1rem;
         display: flex;
+        flex-wrap: wrap;
     }
 
     .cartao {
@@ -157,14 +200,18 @@
         color: #eee;
     }
 
-    @media (max-widht: 576px) {
+    @media (max-width: 576px) {
+        #titulo {
+            opacity: 0;
+        }
+
         nav {
             display: none;
         }
-                main {
-                    flex-direction: column;
-                    align-items: center;
-                    align-content: center;
-                }
-        
+
+        main {
+            flex-direction: column;
+            align-items: center;
+            align-content: center;
+        }
     }
